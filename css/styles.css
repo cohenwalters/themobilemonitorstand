@@ -11283,8 +11283,8 @@ footer a:hover, footer a:active, footer a:focus {
 
 
 .bg-kitchen {
-  background-image: url("/Users/eveline/Documents/Koen/portable stand monitor/website/assets/img/kitchen.jpeg");
-  height:70vh;
+  background-image: url("../assets/img/kitchen.jpeg");
+  height:80vh;
   background-size: cover; 
   background-position: center center;
   background-repeat: no-repeat;
