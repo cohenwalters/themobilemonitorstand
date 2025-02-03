@@ -11296,3 +11296,24 @@ footer a:hover, footer a:active, footer a:focus {
 .starthalfway {
   margin-top: 20vh;
 }
+
+
+@media (min-width: 960px) {
+  .custom-margin-2 {
+margin-left: 6rem;}
+  }
+
+@media (min-width: 960px) {
+  .custom-margin-4 {
+margin-left: 12rem;}
+  }
+
+  @media (min-width: 960px) {
+    .custom-margin-2-right {
+  margin-right: 10rem;}
+    }
+  
+  @media (min-width: 960px) {
+    .custom-margin-4-right {
+  margin-right: 20rem;}
+    }
