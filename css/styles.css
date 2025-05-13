@@ -11283,10 +11283,10 @@ footer a:hover, footer a:active, footer a:focus {
 
 
 .bg-kitchen {
-  background-image: url("../assets/img/kitchen.jpeg");
+  background-image: url("../assets/img/kitchen_withscreenfromback.png");
   height:80vh;
   background-size: cover; 
-  background-position: center center;
+  background-position: right center;
   background-repeat: no-repeat;
   text-align:center;
   margin:auto;
