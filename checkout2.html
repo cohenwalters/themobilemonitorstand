@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Whoop-Style Checkout</title>
+  <title>Checkout the mobile monitor stand</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.webp" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body { background-color: #f8f9fa; }
@@ -35,23 +36,47 @@
     .step-body { padding: 1.5rem; }
     .step-number { color: #6c757d; margin-right: 0.5rem; }
   </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-940565120"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-940565120');
+</script>
 </head>
 <body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg pt-0 pb-0 mb-5 navbar-light shadow-sm" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#page-top">
+          <img src="assets/img/logo-themobilemonitorstand-version2.webp" loading=lazy width= 120; style="display: inline-block;">
+          <span style="display: inline-block;"> </span>
+        </a>
+    </div>
+</nav>
 
 <div class="container py-5">
   <div class="row g-4">
     <!-- Left: Product Summary -->
     <div class="col-lg-4">
       <div class="checkout-card p-4 sticky-top" style="top: 1rem;">
-        <h4>WHOOP 4.0</h4>
-        <img src="https://assets-global.website-files.com/62d96d0b60f88450b70906bc/64b9a4f80f7c97ac355b44c0_Product_4_0_black_on_white.jpg" class="img-fluid mb-3" alt="Whoop Band">
+        <div class="mb-3">
+        <picture >
+          <source srcset="assets/img/20250114_back_bottem_cinematic_narrow-480.webp" type="image/webp" media="(max-width: 767px)">
+          <source srcset="assets/img/20250114_back_bottem_cinematic_narrow.webp" type="image/webp" media="(min-width: 768px)">
+          <img src="assets/img/20250114_back_bottem_cinematic_narrow.webp" class="img-fluid" alt="Order your mobile monitor stand today" style="max-height: 30vh; width: auto; height:auto;" />
+        </picture>
+        </div>
         <ul class="list-unstyled">
-          <li>✔ Free WHOOP device</li>
-          <li>✔ Health & sleep tracking</li>
-          <li>✔ Monthly performance reports</li>
+          <li> <img src="assets/img/check-circle-fill.svg"> 30-day money-back guarantee</li>
+          <li> <img src="assets/img/check-circle-fill.svg"> Premium Build Quality</li>
+          <li> <img src="assets/img/check-circle-fill.svg"> Secure Checkout</li>
         </ul>
         <hr>
-        <h5>Total: <strong>€24/month</strong></h5>
+
+        <h5>Total: <strong id="totalPrice">€199 </strong></h5>
       </div>
     </div>
 
@@ -61,18 +86,16 @@
       <!-- Step 1 -->
       <div class="checkout-card">
         <div class="step-header" data-bs-toggle="collapse" data-bs-target="#step1" aria-expanded="true">
-          <span><span class="step-number">1.</span>Choose Your Plan</span>
+          <span><span class="step-number">1.</span>Enter your zip code to get delivery options.</span>
           <span class="icon">&#9662;</span>
         </div>
         <div class="collapse show" id="step1">
           <div class="step-body">
-            <div class="btn-group d-flex mb-3" role="group">
-              <input type="radio" class="btn-check" name="plan" id="plan12" autocomplete="off" checked>
-              <label class="btn btn-outline-primary w-100" for="plan12">12 Months – €24/month</label>
-
-              <input type="radio" class="btn-check" name="plan" id="plan24" autocomplete="off">
-              <label class="btn btn-outline-primary w-100" for="plan24">24 Months – €20/month</label>
+            <div class="mb-3">
+              <!-- <label for="zipcode" class="form-label">Zip code</label> -->
+              <input type="zipcode" class="form-control" id="zipcode" placeholder="Zip code">
             </div>
+            
             <button class="btn btn-primary w-100" onclick="showStep(2)">Continue</button>
           </div>
         </div>
@@ -85,15 +108,16 @@
           <span class="icon">&#9662;</span>
         </div>
         <div class="collapse" id="step2">
-          <div class="step-body">
-            <select class="form-select mb-3">
-              <option selected>Standard (3-5 days) – Free</option>
-              <option>Express (1-2 days) – €10</option>
-            </select>
+          <div class="btn-group d-flex mb-3" role="group">
+              <input type="radio" class="btn-check" name="plan" id="plan12" autocomplete="off" checked>
+              <label class="btn btn-outline-primary w-100" for="plan12"> Standard (3-5 days) – Free</label>
+
+              <input type="radio" class="btn-check" name="plan" id="plan24" autocomplete="off">
+              <label class="btn btn-outline-primary w-100" for="plan24">Express (1-2 days) – $20</label>
+            </div>
             <button class="btn btn-primary w-100" onclick="showStep(3)">Continue</button>
           </div>
         </div>
-      </div>
 
       <!-- Step 3 -->
       <div class="checkout-card">
@@ -105,37 +129,36 @@
           <div class="step-body">
             <div class="form-check mb-2">
               <input class="form-check-input" type="radio" name="payment" id="card" checked>
-              <label class="form-check-label" for="card">Credit Card</label>
+              <label class="form-check-label" for="card"><img src="assets/img/maestro-alt.svg" class="img-thumbnail" alt="pay with Maestro" style="max-height: 7vh; width: auto; height:auto;"></label>
             </div>
             <div class="form-check mb-2">
               <input class="form-check-input" type="radio" name="payment" id="paypal">
-              <label class="form-check-label" for="paypal">PayPal</label>
+              <label class="form-check-label" for="paypal"><img src="assets/img/mastercard-alt.svg" class="img-thumbnail" alt="pay with Mastercard" style="max-height: 7vh; width: auto; height:auto;"></label>
             </div>
             <div class="form-check mb-2">
               <input class="form-check-input" type="radio" name="payment" id="klarna">
-              <label class="form-check-label" for="klarna">Klarna – Pay later</label>
+              <label class="form-check-label" for="klarna"><img src="assets/img/visa.svg" class="img-thumbnail" alt="pay with Visa" style="max-height: 7vh; width: auto; height:auto;"></label>
             </div>
-            <button class="btn btn-primary w-100" onclick="showStep(4)">Continue</button>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="payment" id="klarna">
+              <label class="form-check-label" for="klarna"><img src="assets/img/paypal.svg" class="img-thumbnail" alt="pay with Paypal" style="max-height: 7vh; width: auto; height:auto;"></label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="payment" id="klarna">
+              <label class="form-check-label" for="klarna"><img src="assets/img/google-pay.svg" class="img-thumbnail" alt="pay with Google Pay" style="max-height: 7vh; width: auto; height:auto;"></label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="payment" id="klarna">
+              <label class="form-check-label" for="klarna"><img src="assets/img/apple-pay.svg" class="img-thumbnail" alt="pay with Apple Pay " style="max-height: 7vh; width: auto; height:auto;"></label>
+            </div>
+            
+
+            <a class="btn btn-success w-100" href="./sale.html" target="_self">Continue checkout</a>
           </div>
         </div>
       </div>
 
-      <!-- Step 4 -->
-      <div class="checkout-card">
-        <div class="step-header" data-bs-toggle="collapse" data-bs-target="#step4" aria-expanded="false">
-          <span><span class="step-number">4.</span>Review & Confirm</span>
-          <span class="icon">&#9662;</span>
-        </div>
-        <div class="collapse" id="step4">
-          <div class="step-body">
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-            </div>
-            <button class="btn btn-success w-100">Finish Order</button>
-          </div>
-        </div>
-      </div>
+
 
     </div>
   </div>
@@ -156,6 +179,22 @@
     }
   }
 </script>
+
+<script>
+    const basePrice = 199;
+    const expressFee = 20;
+    const totalPriceEl = document.getElementById('totalPrice');
+
+    function updateTotal() {
+      const isExpress = document.getElementById('plan24').checked;
+      const total = isExpress ? basePrice + expressFee : basePrice;
+      totalPriceEl.textContent = `€${total}`;
+    }
+
+    // Add change listeners to both delivery options
+    document.getElementById('plan12').addEventListener('change', updateTotal);
+    document.getElementById('plan24').addEventListener('change', updateTotal);
+  </script>
 
 </body>
 </html>
